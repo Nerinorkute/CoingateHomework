@@ -121,3 +121,18 @@ https://www.guru99.com/all-about-testng-and-selenium.html#5
   - priority = 2 - checks ability to create an invoice
    
    In each test describe methods to do (written in PageObjects) and insert an assertion to compare real value to expected value.
+   For example:
+   
+   ```bash
+   @Test (priority=2)
+	public void should_be_able_to_create_an_invoice() throws InterruptedException 
+	{	
+		login.login ("user@gmail.com", "Password9*"); 
+		login.submit();
+		Thread.sleep(60000);
+		create.create();
+		WebElement confirm = create.getFinalConfirmationMessage ();		
+		Assert.assertEquals(confirm.getText (), "Paid and Confirmed");	
+	}
+	
+   
