@@ -3,13 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.Tests">
+      <class name="tests.Test_Invoice">
         <methods>
-          <include name="should_be_able_to_create_an_invoice"/>
           <include name="afterClass"/>
+          <include name="should_be_able_to_create_an_invoice"/>
           <include name="beforeClass"/>
+          <include name="cleanUp"/>
         </methods>
-      </class> <!-- tests.Tests -->
+      </class> <!-- tests.Test_Invoice -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

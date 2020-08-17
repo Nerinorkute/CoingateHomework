@@ -10,99 +10,65 @@ public class ButtonsPage extends PageObject {
 		super(driver);	
 	}
 	
-
-		@FindBy(className = "dashboard-card-title")
-		private WebElement quickStart;
-		
-		public WebElement getCardTitle() {
-			return quickStart;
-		}
 	
+	
+//for test - should_be_able_to_open_PaymentButtonsPage 
+		@FindBy(xpath = "//h2[contains(text(),'Payment Buttons')]")
+		private WebElement paymentButtonTitle;
 		
-		@FindBy(xpath = "//h2[contains(text(),'Paid and Confirmed')]")
-		private WebElement confirmation;
-		
-		public WebElement getConfirmation() {
-			return confirmation;
+		public WebElement getPaymentButtonTitle  () {
+			return paymentButtonTitle;
 		}
 		
 		
-		
-		@FindBy(tagName = "a")
+//for test - should_be_able_to_create_an_invoice() 		
+		@FindBy(linkText = "MyTitle")
 		private WebElement buttonTitle;
 		
-		public WebElement getButtonTitle () {
-			return buttonTitle;
-		}
-		
-		@FindBy(xpath = "//button[@class='ant-btn ant-btn-primary ant-btn-lg']") 
+		@FindBy(tagName = "button") 
 		private WebElement checkoutButton;
 		
-		public WebElement getCheckoutButton () {
-			return  checkoutButton;
-		}
-		
-		@FindBy(xpath = "//*[@id=\"payment-new\"]/div[1]/div/div/div[1]/div/div[2]")
+		@FindBy(className = "currency-card-currency-title")
 		private WebElement BitcoinCurrency;
-		
-		public WebElement getBitcoinCurrency () {
-			return BitcoinCurrency;
-		}
-		
 		
 		@FindBy(id = "invoice-checkout-button")
 		private WebElement payWithBitcoin;
-		
-		public WebElement getPayWithBitcoin() {
-			return payWithBitcoin;
-		}
 		
 		
 		@FindBy(xpath = "//div[@class='ant-row']//div[1]//button[1]")
 		private WebElement payMarkPayed;
 		
+		@FindBy(xpath = "//h2[contains(text(),'Paid and Confirmed')]")
+		private WebElement confirmationMessage;
+		
+		
+		public WebElement getButtonTitle () {
+			return buttonTitle;
+		}
+		
+		public WebElement getCheckoutButton () {
+			return  checkoutButton;
+		}	
+		
+		public WebElement getBitcoinCurrency () {
+			return BitcoinCurrency;
+		}
+			
+		public WebElement getPayWithBitcoin() {
+			return payWithBitcoin;
+		}
+				
 		public WebElement getMarkAsPayed() {
 			return payMarkPayed;
 		}
 				
-		
-		@FindBy(xpath = "//h2[contains(text(),'Paid and Confirmed')]")
-		private WebElement confirmationMessage;
-		
 		public WebElement getFinalConfirmationMessage () {
 			return confirmationMessage;
 		}
-		
-		@FindBy(name = "user[email]")
-		private WebElement emailField;
-		
-		public WebElement getEmailField() {
-			return emailField;
-		}
-		
-		
-		@FindBy(name = "user[password]")
-		private WebElement passwordField;
-		
-		public WebElement getPasswordField() {
-			return passwordField;
-		}
-		
-		
-		@FindBy(id = "login")
-		private  WebElement submitButton ;
-		
-		public WebElement getSubmitButton() {
-			return submitButton;
-		}
-		
-		
+	
 
-	public void create () {
-		driver.get("https://sandbox.coingate.com/login");
-		this.getEmailField().sendKeys("niaringa@gmail.com");  
-		this.getPasswordField().sendKeys("Password9*");
-		this.getSubmitButton().click();
+	public void create () throws InterruptedException {		
+		driver.get("https://dashboard-sandbox.coingate.com/account/buttons");
 		this.getButtonTitle().click(); 
 		this.getCheckoutButton().click();
 		this.getBitcoinCurrency().click(); 
@@ -110,9 +76,7 @@ public class ButtonsPage extends PageObject {
 		this.getMarkAsPayed().click(); 
 	}
 
-
-
-
+	
 }	
 
 
