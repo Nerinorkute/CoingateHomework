@@ -14,7 +14,7 @@ Requirements
 
 Creating a project in Eclipse
 --------------------------
-Create a new Maven project with name Coingate_task, use TestNG automation testing framework.
+Create a new Maven project with name CoingateHomework, use TestNG automation testing framework.
 Do as shown here:
 https://www.youtube.com/watch?v=sNEcpw8LPpo
 and here:
